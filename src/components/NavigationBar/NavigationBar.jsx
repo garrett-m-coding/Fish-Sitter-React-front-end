@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import "./NavigationBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import discus from "../../images/DiscusSilhouette.png";
 
-class NavigationBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
+const NavigationBar = ({ user }) => {
     return (
       <div>
+        {user && <h4>Welcome back {user.first_name} {user.last_name}</h4>}
         <div>
           <div>
             <Navbar sticky="top" bg="black" variant="dark" >
@@ -43,7 +39,6 @@ class NavigationBar extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default NavigationBar;
