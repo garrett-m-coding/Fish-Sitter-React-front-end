@@ -29,19 +29,12 @@
     color: white;
 }
 
-h2 {
+/* h2 {
     color: white;
     background-color: black;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: lightcoral;
-}
-
-.h3 {
-    color: white;
-    background-color: black;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: lightcoral;
-}
+} */
 
 h3 {
     color: white;

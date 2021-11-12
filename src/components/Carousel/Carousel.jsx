@@ -5,15 +5,25 @@ import plantedAquarium from "../../images/planted aquarium black background.jpg"
 import goldAngelfish from "../../images/gold angelfish planted background.jpg";
 import whiteBetta from "../../images/white betta black background.jpg";
 import stripedAngelfish from "../../images/striped angelfish planted background.jpg";
-import './Carousel.css';
-
-
+import "./Carousel.css";
 
 const CarouselLanding = () => {
   return (
     <div className="Carousel">
       <br />
-      <h2>Making fresh-water fish-keeping more enjoyable and organized!</h2>
+      <h2
+        style={{
+          color: "white",
+          fontSize: "36px",
+          textAlign: "center",
+          backgroundColor: "black",
+          borderRadius: "40px",
+          webkitTextStrokeWidth: "1.5px",
+          webkitTextStrokeColor: "lightcoral",
+        }}
+      >
+        Making fresh-water fish-keeping more enjoyable and organized!
+      </h2>
       <br />
       <Carousel>
         <Carousel.Item>
