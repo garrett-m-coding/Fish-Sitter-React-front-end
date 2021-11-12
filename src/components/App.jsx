@@ -4,8 +4,14 @@ import "./App.css";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { Switch, Route, Redirect } from "react-router-dom"
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import CarouselLanding from "./Carousel/Carousel";
+import RegisterScreen from "./Register/RegisterScreen";
 
 
 
@@ -42,19 +48,15 @@ class App extends Component {
   render() {
     const user = this.state.user;
     return (
-      <div className="App">
-        <NavigationBar user={user} />
-        <div className="row">
-          <div className="col-md-3"></div>
-          {/* <Switch> */}
-            <div className="col-md-6">
-              <br />
-              <h2>
-                Making fresh-water fish-keeping more enjoyable and organized!
-              </h2>
-              <br />
-              <CarouselLanding />
-              {/* <Route path='/profile' render={props => {
+      <Router>
+        <div className="App">
+          <NavigationBar user={user} />
+          <div className="row">
+            <div className="col-md-3"></div>
+            <Switch>
+              <div className="col-md-6">
+                <Route exact path='/' component={CarouselLanding} />
+                {/* <Route path='/profile' render={props => {
                   if (!user){
                       return <Redirect to="/login" />;
                   } else {
@@ -62,17 +64,18 @@ class App extends Component {
                   }
               }}
               /> */}
-              {/* <Route path='/register' component={RegisterScreen} /> */}
-              {/* <Route path='/login' component={LoginScreen} /> */}
-              {/* <Route path='/logout' component={Logout} /> */}
-              {/* <Route path='/not-found' component={NotFound} /> */}
-              {/* <Route path='/' exact component={LandingScreen} /> */}
-              {/* <Redirect to='/not-found' /> */}
-            </div>
-          {/* </Switch> */}
-          <div className="col-md-3"></div>
+                <Route path='/register' component={RegisterScreen} />
+                {/* <Route path='/login' component={LoginScreen} /> */}
+                {/* <Route path='/logout' component={Logout} /> */}
+                {/* <Route path='/not-found' component={NotFound} /> */}
+                {/* <Route path='/' exact component={LandingScreen} /> */}
+                {/* <Redirect to='/not-found' /> */}
+              </div>
+            </Switch>
+            <div className="col-md-3"></div>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }

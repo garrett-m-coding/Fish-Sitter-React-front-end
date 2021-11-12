@@ -1,11 +1,8 @@
-.navigationBar-nav {
-    background-color: black;
-    color: white;
-    width: 100%;
+.navbar-nav.navbar-right {
+    position: absolute;
+    right: 18%;
 }
 
-h1 {
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.nav-item {
+    margin-right: 20px;
 }

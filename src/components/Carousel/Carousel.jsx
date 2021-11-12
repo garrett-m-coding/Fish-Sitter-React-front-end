@@ -5,12 +5,16 @@ import plantedAquarium from "../../images/planted aquarium black background.jpg"
 import goldAngelfish from "../../images/gold angelfish planted background.jpg";
 import whiteBetta from "../../images/white betta black background.jpg";
 import stripedAngelfish from "../../images/striped angelfish planted background.jpg";
+import './Carousel.css';
 
 
 
 const CarouselLanding = () => {
   return (
-    <div>
+    <div className="Carousel">
+      <br />
+      <h2>Making fresh-water fish-keeping more enjoyable and organized!</h2>
+      <br />
       <Carousel>
         <Carousel.Item>
           <img
@@ -21,7 +25,8 @@ const CarouselLanding = () => {
           <Carousel.Caption>
             <h3>JOIN FOR FREE</h3>
             <p>
-              Join the easiest-to-use and best fresh-water aquarium tracking app!
+              Join the easiest-to-use and best fresh-water aquarium tracking
+              app!
             </p>
           </Carousel.Caption>
         </Carousel.Item>
