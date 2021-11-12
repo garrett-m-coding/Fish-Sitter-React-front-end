@@ -23,6 +23,7 @@ class App extends Component {
           <div className="col-md-3"></div>
           <div className="col-md-6">
             <br />
+            <h2>Making fresh-water fish-keeping more enjoyable and organized!</h2>
             <br />
             <Carousel>
               <Carousel.Item>
@@ -32,9 +33,9 @@ class App extends Component {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                  <h3>First slide label</h3>
+                  <h3>JOIN FOR FREE</h3>
                   <p>
-                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                    Join the best, easiest-to-use, fresh-water Aquarium tracking app!
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -45,9 +46,10 @@ class App extends Component {
                   alt="Second slide"
                 />
                 <Carousel.Caption>
-                  <h3>Second slide label</h3>
+                  <h3>TRACK ALL YOUR AQUARIUMS WITH EASE</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Add each individual aquarium to keep track of all the changes unique 
+                    to each set-up!
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -58,10 +60,10 @@ class App extends Component {
                   alt="Third slide"
                 />
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
+                  <h3>FISH STATUS</h3>
                   <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
+                    Add your fish within each aquarium and keep it up to date as you add 
+                    more fish, move fish to different aquariums, or fish pass away.
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -72,10 +74,10 @@ class App extends Component {
                   alt="Third slide"
                 />
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
+                  <h3>PLANTS</h3>
                   <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
+                    Don't forget to add which plants you've used in each aquarium as well. 
+                    You can add, remove, and keep track of trimmings as well!
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>
@@ -86,10 +88,11 @@ class App extends Component {
                   alt="Third slide"
                 />
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
+                  <h3>WATER PARAMETERS</h3>
                   <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl
-                    consectetur.
+                    The most important step to diagnosing aquarium problems is regular water 
+                    parameter measurements. Keep track of your measurements as frequently as 
+                    you'd like (Gh, Kh, pH, Ni, Na, temperature, water-changes).
                   </p>
                 </Carousel.Caption>
               </Carousel.Item>

@@ -30,3 +30,23 @@
     color: white;
 }
 
+h2 {
+    color: white;
+    background-color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: lightcoral;
+}
+
+h3 {
+    color: white;
+    background-color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: lightcoral;
+}
+
+
+p {
+    color: black;
+    background-color: lightcoral;
+    font-size: 22px;
+}

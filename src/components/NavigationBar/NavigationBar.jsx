@@ -14,7 +14,7 @@ class NavigationBar extends Component {
       <div>
         <div>
           <div>
-            <Navbar bg="black" variant="dark">
+            <Navbar sticky="top" bg="black" variant="dark" >
               <Container>
                 <Navbar.Brand href="#home">
                   <img
