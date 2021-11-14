@@ -10,16 +10,11 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import CarouselLanding from "./Carousel/Carousel";
-import RegisterScreen from "./Register/RegisterScreen";
-
-
+import CarouselLanding from "./LandingScreen/Carousel";
+import RegisterScreen from "./Authentication/RegisterScreen";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state = {};
 
   componentDidMount() {
     const jwt = localStorage.getItem("token");
@@ -55,16 +50,16 @@ class App extends Component {
             <div className="col-md-3"></div>
             <Switch>
               <div className="col-md-6">
-                <Route exact path='/' component={CarouselLanding} />
+                <Route exact path="/" component={CarouselLanding} />
                 {/* <Route path='/profile' render={props => {
                   if (!user){
-                      return <Redirect to="/login" />;
+                      return <Redirect to="/" />;
                   } else {
                       return <ProfileScreen {...props} user={user} />
                   }
               }}
               /> */}
-                <Route path='/register' component={RegisterScreen} />
+                <Route path="/register" component={RegisterScreen} />
                 {/* <Route path='/login' component={LoginScreen} /> */}
                 {/* <Route path='/logout' component={Logout} /> */}
                 {/* <Route path='/not-found' component={NotFound} /> */}

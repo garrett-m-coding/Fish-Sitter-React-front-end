@@ -17,7 +17,7 @@ const CarouselLanding = () => {
           fontSize: "36px",
           textAlign: "center",
           backgroundColor: "black",
-          borderRadius: "40px",
+          borderRadius: "10px",
           webkitTextStrokeWidth: "1.5px",
           webkitTextStrokeColor: "lightcoral",
         }}
