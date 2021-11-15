@@ -1,4 +1,4 @@
- import axios from "axios";
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./RegisterScreen.css";
 
@@ -18,30 +18,35 @@ const RegisterScreen = () => {
   useEffect(() => {
     const jwt = localStorage.getItem("token");
     if (jwt !== null) {
-        window.location.replace("http://localhost:3000/");
+      window.location.replace("http://localhost:3000/");
     } else {
-        setLoading(false);
+      setLoading(false);
     }
-}, []);
+  }, []);
 
-const onSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    
-    const user = {
-        first_name: first_name,
-        last_name: last_name,
-        zip_code: zip_code,
-        experience_level: experience_level,
-        email: email,
-        username: username,
-        password: password,
-    };
-    console.log(user)
-    let response = await axios.post('http://127.0.0.1:8000/api/auth/register/', user)
-    console.log(response);
-};
 
-return (
+    const user = {
+      first_name: first_name,
+      last_name: last_name,
+      zip_code: zip_code,
+      experience_level: experience_level,
+      email: email,
+      username: username,
+      password: password,
+    };
+    console.log(user);
+    let response = await axios.post(
+      "http://127.0.0.1:8000/api/auth/register/",
+      user
+    );
+    console.log(response);
+    alert(`${user.first_name} ${user.last_name} thanks for joining Fish Sitter!`);
+    window.location = '/';
+  };
+
+  return (
     <div>
       <div className="container">
         {loading === false && (

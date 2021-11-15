@@ -12,6 +12,10 @@ import {
 } from "react-router-dom";
 import CarouselLanding from "./LandingScreen/Carousel";
 import RegisterScreen from "./Authentication/RegisterScreen";
+import SignInScreen from "./Authentication/SigInScreen";
+import ProfileScreen from "./Views/ProfileScreen";
+
+
 
 class App extends Component {
   state = {};
@@ -51,20 +55,20 @@ class App extends Component {
             <Switch>
               <div className="col-md-6">
                 <Route exact path="/" component={CarouselLanding} />
-                {/* <Route path='/profile' render={props => {
+                <Route path='/profile/' render={props => {
                   if (!user){
                       return <Redirect to="/" />;
                   } else {
                       return <ProfileScreen {...props} user={user} />
                   }
               }}
-              /> */}
-                <Route path="/register" component={RegisterScreen} />
-                {/* <Route path='/login' component={LoginScreen} /> */}
-                {/* <Route path='/logout' component={Logout} /> */}
-                {/* <Route path='/not-found' component={NotFound} /> */}
+              />
+                <Route path='/register/' component={RegisterScreen} />
+                <Route path='/login/' component={SignInScreen} />
+                {/* <Route path='/logout/' component={Logout} /> */}
+                {/* <Route path='/not-found/' component={NotFound} /> */}
                 {/* <Route path='/' exact component={LandingScreen} /> */}
-                {/* <Redirect to='/not-found' /> */}
+                {/* <Redirect to='/not-found/' /> */}
               </div>
             </Switch>
             <div className="col-md-3"></div>

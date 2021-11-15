@@ -7,6 +7,8 @@ import whiteBetta from "../../images/white betta black background.jpg";
 import stripedAngelfish from "../../images/striped angelfish planted background.jpg";
 import "./Carousel.css";
 
+
+
 const CarouselLanding = () => {
   return (
     <div className="Carousel">
