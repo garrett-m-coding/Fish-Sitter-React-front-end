@@ -1,4 +1,5 @@
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 import React, { useState, useEffect } from "react";
 import "./RegisterScreen.css";
 
@@ -29,7 +30,10 @@ const SignInScreen = () => {
     console.log(user);
     let response = await axios.post("http://127.0.0.1:8000/api/auth/login/", user);
     console.log(response);
-    alert(`Welcome back to Fish Sitter, ${user.first_name} ${user.last_name}!`);
+    localStorage.setItem('token', response.data.access);
+    // const decodedToken = jwtDecode(response.data.access)
+    alert(`Welcome back to Fish Sitter, ${user.username}!`);
+    window.location.replace("http://localhost:3000/profile/");
   };
 
   return (

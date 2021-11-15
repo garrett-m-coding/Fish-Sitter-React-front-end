@@ -9,12 +9,6 @@ import discus from "../../images/DiscusSilhouette.png";
 const NavigationBar = ({ user }) => {
   return (
     <div>
-      {user && (
-        <h4 style={{ color: "white" }}>
-          {" "}
-          Hello {user.first_name}, what are your aquarium plans today?
-        </h4>
-      )}
       <div>
         <div>
           <Navbar sticky="top" bg="black" variant="dark">
@@ -26,7 +20,7 @@ const NavigationBar = ({ user }) => {
                   width="100px"
                   height="100px"
                   className="d-inline-block align-bottom"
-                />{" "}
+                  />{" "}
                 <text
                   style={{
                     color: "white",
@@ -34,9 +28,10 @@ const NavigationBar = ({ user }) => {
                     textAlign: "center",
                     backgroundColor: "black",
                   }}
-                >
+                  >
                   FISH SITTER
                 </text>
+                {user && <h4 style={{ color: "white" }}>Hello {user.first_name}, what are your aquarium plans today?</h4>}
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse
@@ -106,6 +101,21 @@ const NavigationBar = ({ user }) => {
                           Aquarium 4
                         </NavDropdown.Item>
                       </NavDropdown>
+                      <Nav.Link
+                        className="nav-item"
+                        href="/logout/"
+                        style={{
+                          color: "white",
+                          fontSize: "36px",
+                          textAlign: "center",
+                          backgroundColor: "white",
+                          borderRadius: "40px",
+                          webkitTextStrokeWidth: "1.5px",
+                          webkitTextStrokeColor: "lightcoral",
+                        }}
+                      >
+                        LOGOUT
+                      </Nav.Link>
                     </React.Fragment>
                   )}
                 </Nav>

@@ -13,7 +13,8 @@ import {
 import CarouselLanding from "./LandingScreen/Carousel";
 import RegisterScreen from "./Authentication/RegisterScreen";
 import SignInScreen from "./Authentication/SigInScreen";
-import ProfileScreen from "./Views/ProfileScreen";
+import Profile from "./Views/ProfileScreen";
+import Logout from "./Authentication/Logout";
 
 
 
@@ -27,22 +28,23 @@ class App extends Component {
       this.setState({
         user,
       });
+      console.log(user);
     } catch {}
   }
 
-  getAllAquariums = async () => {
-    try {
-      let responseAllAquariums = await axios.get(
-        "http://127.0.0.1:8000/api/aquariums/all/"
-      );
-      console.log(responseAllAquariums.data);
-      this.setState({
-        aquariums: responseAllAquariums.data,
-      });
-    } catch (ex) {
-      console.log("Error in API call!");
-    }
-  };
+  // getAllAquariums = async () => {
+  //   try {
+  //     let responseAllAquariums = await axios.get(
+  //       "http://127.0.0.1:8000/api/aquariums/all/"
+  //     );
+  //     console.log(responseAllAquariums.data);
+  //     this.setState({
+  //       aquariums: responseAllAquariums.data,
+  //     });
+  //   } catch (ex) {
+  //     console.log("Error in API call!");
+  //   }
+  // };
 
   render() {
     const user = this.state.user;
@@ -54,18 +56,19 @@ class App extends Component {
             <div className="col-md-3"></div>
             <Switch>
               <div className="col-md-6">
-                <Route exact path="/" component={CarouselLanding} />
-                <Route path='/profile/' render={props => {
+                <Route path="/" exact component={CarouselLanding} />
+                {/* <Route path='/profile/' render={props => {
                   if (!user){
-                      return <Redirect to="/" />;
+                    return <Redirect to="/" />;
                   } else {
-                      return <ProfileScreen {...props} user={user} />
+                    return <Profile {...props} user={user} />
                   }
-              }}
-              />
+                }}
+                /> */}
                 <Route path='/register/' component={RegisterScreen} />
                 <Route path='/login/' component={SignInScreen} />
-                {/* <Route path='/logout/' component={Logout} /> */}
+                <Route path='/profile/' component={Profile} />
+                <Route path='/logout/' component={Logout} />
                 {/* <Route path='/not-found/' component={NotFound} /> */}
                 {/* <Route path='/' exact component={LandingScreen} /> */}
                 {/* <Redirect to='/not-found/' /> */}
