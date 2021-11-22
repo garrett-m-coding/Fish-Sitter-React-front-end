@@ -18,7 +18,7 @@ const RegisterScreen = () => {
   useEffect(() => {
     const jwt = localStorage.getItem("token");
     if (jwt !== null) {
-      window.location.replace("http://localhost:3000/");
+      window.location.replace("http://localhost:3000/login/");
     } else {
       setLoading(false);
     }
@@ -43,7 +43,7 @@ const RegisterScreen = () => {
     );
     console.log(response);
     alert(`${user.first_name} ${user.last_name} thanks for joining Fish Sitter!`);
-    window.location = '/';
+    // window.location = '/';
   };
 
   return (

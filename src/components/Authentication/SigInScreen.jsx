@@ -31,7 +31,6 @@ const SignInScreen = () => {
     let response = await axios.post("http://127.0.0.1:8000/api/auth/login/", user);
     console.log(response);
     localStorage.setItem('token', response.data.access);
-    // const decodedToken = jwtDecode(response.data.access)
     alert(`Welcome back to Fish Sitter, ${user.username}!`);
     window.location.replace("http://localhost:3000/profile/");
   };

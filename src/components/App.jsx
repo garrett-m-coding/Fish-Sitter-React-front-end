@@ -13,22 +13,25 @@ import {
 import CarouselLanding from "./LandingScreen/Carousel";
 import RegisterScreen from "./Authentication/RegisterScreen";
 import SignInScreen from "./Authentication/SigInScreen";
-import Profile from "./Views/ProfileScreen";
+import AquariumsProfile from "./Views/ProfileScreen";
 import Logout from "./Authentication/Logout";
 
 
 
 class App extends Component {
-  state = {};
+  state = {
+    aquariums: [],
+    user :[],
+  };
 
   componentDidMount() {
     const jwt = localStorage.getItem("token");
+    // window.location = '/';
     try {
       const user = jwtDecode(jwt);
       this.setState({
         user,
       });
-      console.log(user);
     } catch {}
   }
 
@@ -53,28 +56,30 @@ class App extends Component {
         <div className="App">
           <NavigationBar user={user} />
           <div className="row">
-            <div className="col-md-3"></div>
+            <div className="col-md-2"></div>
             <Switch>
-              <div className="col-md-6">
-                <Route path="/" exact component={CarouselLanding} />
+              <div className="col-md-8">
                 {/* <Route path='/profile/' render={props => {
                   if (!user){
-                    return <Redirect to="/" />;
+                    return <Redirect to="/login/" />;
                   } else {
-                    return <Profile {...props} user={user} />
+                    return <AquariumsProfile {...props} user={user} />
                   }
                 }}
                 /> */}
                 <Route path='/register/' component={RegisterScreen} />
                 <Route path='/login/' component={SignInScreen} />
-                <Route path='/profile/' component={Profile} />
+                <Route path='/profile/' component={AquariumsProfile} />
                 <Route path='/logout/' component={Logout} />
-                {/* <Route path='/not-found/' component={NotFound} /> */}
-                {/* <Route path='/' exact component={LandingScreen} /> */}
+                <Route exact path="/" component={CarouselLanding} />
+                {/* <Route path='/aquarium/fish/' component={AddFish} /> */}
+                {/* <Route path='/aquarium/plants/' component={AddPlants} /> */}
+                {/* <Route path='/aquarium/food/' component={AddFood} /> */}
+                {/* <Route path='/aquarium/water/' component={AddWaterParams} /> */}
                 {/* <Redirect to='/not-found/' /> */}
               </div>
             </Switch>
-            <div className="col-md-3"></div>
+            <div className="col-md-2"></div>
           </div>
         </div>
       </Router>

@@ -1,0 +1,49 @@
+.row {
+    /* max-width: 200px; */
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+form {
+    color: "white";
+    font-size: "36px";
+    text-align: "center";
+    background-color: "white";
+    border-radius: "40px";
+    -webkit-text-stroke-width: "1.5px";
+    -webkit-text-stroke-color: "lightcoral";
+}
+
+label {
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: lightcoral;
+    background-color: black;
+    font-size: 28px;
+    padding: 0px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+.row input, .row select {
+    width: 100%;
+    font-size: 25px;
+    /* content, then padding, then border, last is outside margin */
+    padding: 0px;
+    border: 1px solid lightcoral;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    display: block;
+}
+
+th {
+    font-size: 24px;
+    border-color: lightcoral;
+}
+td {
+    font-size: 18px;
+    color:lightcoral;
+}
