@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavigationBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import discus from "../../images/DiscusSilhouette.png";
 
 

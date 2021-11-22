@@ -12,7 +12,6 @@ const RegisterScreen = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -65,7 +64,6 @@ const RegisterScreen = () => {
             JOIN
           </h1>
         )}
-        {errors === true && <h2>Cannot signup with provided credentials</h2>}
         <form onSubmit={onSubmit}>
           <label htmlFor="first_name">First name:</label>
           <input

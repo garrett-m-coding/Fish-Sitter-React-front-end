@@ -1,5 +1,4 @@
 import axios from "axios";
-import jwtDecode from "jwt-decode";
 import React, { useState, useEffect } from "react";
 import "./RegisterScreen.css";
 
@@ -8,7 +7,6 @@ import "./RegisterScreen.css";
 const SignInScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,7 +52,6 @@ const SignInScreen = () => {
             SIGN-IN
           </h1>
         )}
-        {errors === true && <h2>Cannot sign-in with provided credentials</h2>}
         <form onSubmit={onSubmit}>
           <label htmlFor="username">Username:</label>
           <input

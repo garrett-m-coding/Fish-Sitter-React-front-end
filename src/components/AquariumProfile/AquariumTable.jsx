@@ -1,5 +1,4 @@
 import React from 'react';
-import "./AquariumTable.css";
 import Table from 'react-bootstrap/Table';
 
 

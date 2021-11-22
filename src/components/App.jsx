@@ -2,19 +2,20 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import NavigationBar from "./NavigationBar/NavigationBar";
-import axios from "axios";
+// import axios from "axios";
 import jwtDecode from "jwt-decode";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import CarouselLanding from "./LandingScreen/Carousel";
 import RegisterScreen from "./Authentication/RegisterScreen";
 import SignInScreen from "./Authentication/SigInScreen";
-import AquariumsProfile from "./Views/ProfileScreen";
+import AquariumsProfile from "./AquariumProfile/ProfileScreen";
 import Logout from "./Authentication/Logout";
+import AddFish from "./AddToAquarium/AddFish/AddFish";
 
 
 
@@ -72,7 +73,7 @@ class App extends Component {
                 <Route path='/profile/' component={AquariumsProfile} />
                 <Route path='/logout/' component={Logout} />
                 <Route exact path="/" component={CarouselLanding} />
-                {/* <Route path='/aquarium/fish/' component={AddFish} /> */}
+                <Route exact path="/aquariums/fish/" component={AddFish} />
                 {/* <Route path='/aquarium/plants/' component={AddPlants} /> */}
                 {/* <Route path='/aquarium/food/' component={AddFood} /> */}
                 {/* <Route path='/aquarium/water/' component={AddWaterParams} /> */}
