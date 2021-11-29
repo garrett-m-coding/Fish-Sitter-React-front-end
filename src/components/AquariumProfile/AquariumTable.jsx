@@ -9,7 +9,8 @@ const AquariumTable = (props) => {
             <thead>
                 <tr>
                     <th>Edit</th>
-                    <th>Name</th>
+                    {/* <th>Aquarium ID</th> */}
+                    <th>Aquarium Name</th>
                     <th>Water Capacity</th>
                     <th>Currently Active</th>
                     <th>Fish</th>

@@ -42,7 +42,7 @@ const RegisterScreen = () => {
     );
     console.log(response);
     alert(`${user.first_name} ${user.last_name} thanks for joining Fish Sitter!`);
-    // window.location = '/';
+    window.location = '/login/';
   };
 
   return (

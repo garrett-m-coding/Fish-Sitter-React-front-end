@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Nav } from "react-bootstrap";
-import EditAquarium from "./EditAquarium";
-import AddFish from "../AddToAquarium/AddFish/AddFish";
+import { BrowserRouter as Link } from "react-router-dom";
+// import { Nav } from "react-bootstrap";
+// import EditAquarium from "./EditAquarium";
+// import AddFish from "../AddToAquarium/AddFish/AddFish";
 // import AddFood from "../AddToAquarium/AddFood/AddFood";
 // import AddPlants from "../AddToAquarium/AddPlants/AddPlants";
 // import AddWaterParams from "../AddToAquarium/AddWaterParams/AddWaterParams";
@@ -20,36 +20,115 @@ const Aquariums = (props) => {
     <tbody>
       <tr>
         <td>
-          <button onClick={EditAquarium}>Edit</button>
+          <Link
+            to={{
+              pathname: "/aquarium/edit/",
+              state: {
+                aquariumId: props.aquarium.id,
+                editName: props.aquarium.name,
+                editWaterCapacity: props.aquarium.water_capacity,
+                editStatus: aquariumStatus(props),
+              },
+            }}
+            style={{
+              color: "white",
+              fontSize: "24px",
+              backgroundColor: "green",
+              borderRadius: "10px",
+              webkitTextStrokeWidth: "1.5px",
+              webkitTextStrokeColor: "lightcoral",
+            }}
+          >
+            Edit
+          </Link>
         </td>
+        {/* <td>{props.aquarium.id}</td> */}
         <td>{props.aquarium.name}</td>
         <td>{props.aquarium.water_capacity}</td>
         <td>{aquariumStatus(props)}</td>
         <td>
-          <Nav>
-            <Nav.Link
-              href="/aquariums/fish/"
-              style={{
-                color: "white",
-                fontSize: "20px",
-                backgroundColor: "green",
-                borderRadius: "10px",
-                webkitTextStrokeWidth: "1.5px",
-                webkitTextStrokeColor: "lightcoral",
-              }}
-            >
-              Add Fish
-            </Nav.Link>
-          </Nav>
+          <Link
+            to={{
+              pathname: "/aquarium/fish/",
+              state: {
+                aquariumId: props.aquarium.id,
+                name: props.aquarium.name,
+              },
+            }}
+            style={{
+              color: "white",
+              fontSize: "24px",
+              backgroundColor: "green",
+              borderRadius: "10px",
+              webkitTextStrokeWidth: "1.5px",
+              webkitTextStrokeColor: "lightcoral",
+            }}
+          >
+            Add Fish
+          </Link>
         </td>
         <td>
-          <button>Add Food</button>
+          <Link
+            to={{
+              pathname: "/aquarium/food/",
+              state: {
+                aquariumId: props.aquarium.id,
+                name: props.aquarium.name,
+              },
+            }}
+            style={{
+              color: "white",
+              fontSize: "24px",
+              backgroundColor: "green",
+              borderRadius: "10px",
+              webkitTextStrokeWidth: "1.5px",
+              webkitTextStrokeColor: "lightcoral",
+            }}
+          >
+            Add Food
+          </Link>
         </td>
         <td>
-          <button>Add Plants</button>
+          <Link
+            to={{
+              pathname: "/aquarium/plants/",
+              state: {
+                aquariumId: props.aquarium.id,
+                name: props.aquarium.name,
+              },
+            }}
+            style={{
+              color: "white",
+              fontSize: "24px",
+              backgroundColor: "green",
+              borderRadius: "10px",
+              webkitTextStrokeWidth: "1.5px",
+              webkitTextStrokeColor: "lightcoral",
+            }}
+          >
+            Add Plants
+          </Link>
         </td>
         <td>
-          <button>Water Parameters</button>
+          <Link
+            to={{
+              pathname: "/aquarium/water/",
+              state: {
+                aquariumId: props.aquarium.id,
+                name: props.aquarium.name,
+              },
+            }}
+            style={{
+              color: "white",
+              fontSize: "24px",
+              backgroundColor: "green",
+              borderRadius: "10px",
+              webkitTextStrokeWidth: "1.5px",
+              webkitTextStrokeColor: "lightcoral",
+            }}
+          >
+            Add Water Parameters
+          </Link>
         </td>
       </tr>
     </tbody>

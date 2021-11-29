@@ -16,13 +16,21 @@ import SignInScreen from "./Authentication/SigInScreen";
 import AquariumsProfile from "./AquariumProfile/ProfileScreen";
 import Logout from "./Authentication/Logout";
 import AddFish from "./AddToAquarium/AddFish/AddFish";
+import AddFood from "./AddToAquarium/AddFood/AddFood";
+import AddPlants from "./AddToAquarium/AddPlants/AddPlants";
+import AddWaterParams from "./AddToAquarium/AddWaterParams/AddWaterParams";
+import EditAquarium from "./AquariumProfile/EditAquarium";
 
 
 
 class App extends Component {
   state = {
+    user :"",
     aquariums: [],
-    user :[],
+    fishes: [],
+    plants: [],
+    food: [],
+    waterParams: [],
   };
 
   componentDidMount() {
@@ -35,20 +43,6 @@ class App extends Component {
       });
     } catch {}
   }
-
-  // getAllAquariums = async () => {
-  //   try {
-  //     let responseAllAquariums = await axios.get(
-  //       "http://127.0.0.1:8000/api/aquariums/all/"
-  //     );
-  //     console.log(responseAllAquariums.data);
-  //     this.setState({
-  //       aquariums: responseAllAquariums.data,
-  //     });
-  //   } catch (ex) {
-  //     console.log("Error in API call!");
-  //   }
-  // };
 
   render() {
     const user = this.state.user;
@@ -68,15 +62,16 @@ class App extends Component {
                   }
                 }}
                 /> */}
-                <Route path='/register/' component={RegisterScreen} />
-                <Route path='/login/' component={SignInScreen} />
-                <Route path='/profile/' component={AquariumsProfile} />
-                <Route path='/logout/' component={Logout} />
+                <Route exact path='/register/' component={RegisterScreen} />
+                <Route exact path='/login/' component={SignInScreen} />
+                <Route exact path='/profile/' component={AquariumsProfile} />
+                <Route exact path='/logout/' component={Logout} />
                 <Route exact path="/" component={CarouselLanding} />
-                <Route exact path="/aquariums/fish/" component={AddFish} />
-                {/* <Route path='/aquarium/plants/' component={AddPlants} /> */}
-                {/* <Route path='/aquarium/food/' component={AddFood} /> */}
-                {/* <Route path='/aquarium/water/' component={AddWaterParams} /> */}
+                <Route exact path="/aquarium/edit/" component={EditAquarium} /> 
+                <Route exact path="/aquarium/fish/" component={AddFish} />
+                <Route exact path='/aquarium/plants/' component={AddPlants} />
+                <Route exact path='/aquarium/food/' component={AddFood} />
+                <Route exact path='/aquarium/water/' component={AddWaterParams} />
                 {/* <Redirect to='/not-found/' /> */}
               </div>
             </Switch>
